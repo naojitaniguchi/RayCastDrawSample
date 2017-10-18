@@ -23,7 +23,7 @@ public class Paint : MonoBehaviour {
                 Vector3 pos = new Vector3(hit.point.x, hit.point.y, hit.point.z) + hit.normal * 0.1f;
                 GameObject hitSplash = Instantiate(splashObject, pos, Quaternion.FromToRotation(Vector3.forward * -1.0f, hit.normal));
                 float rot = Random.Range(0.0f, 360.0f);
-                hitSplash.transform.localEulerAngles = new Vector3(0.0f, 0.0f, rot);
+                hitSplash.transform.Rotate(Vector3.forward,rot, Space.Self);
                 float scale = Random.Range(0.5f, 2.0f);
                 hitSplash.transform.localScale = new Vector3(scale, scale, scale);
                 //Debug.Log(hit.transform.gameObject.name);
